@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.0",
     "immer": "^10.0.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -36,6 +37,11 @@
       "no-console": "off",
       "no-unused-vars": "warn",
       "react/prop-types": "warn"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
     },
     "root": true
   },
