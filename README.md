@@ -2,7 +2,7 @@
 
 # React and Redux app built from CRA, 
 
-# This app is created using an excellent tutorial by Pluralsight's talented instructor Cory House (http://www.pluralsight.com/author/cory-house) on Pluralsight
+# This app is based on create-react-app, and an excellent tutorial by Pluralsight's talented instructor Cory House (http://www.pluralsight.com/author/cory-house) on Pluralsight
 
 # This tutorial initially used a webserver configured from scratch including a mock api based on Express and json-server. However, because it was posted in 2021, there have since arisen 15 deprications in the initial set up so this version will be based on CRA.
 
