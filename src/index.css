@@ -10,16 +10,19 @@
 }
  .container-fives {
      background-color: #20323a;
+     min-width: 400px;
 }
+.myheader-img {width:100px; }
+
  .my-head {
-    padding-left:26px;
+     padding-left:26px;
 }
  h4.my-subhead {
-    color:#ffffff;
-     padding-bottom:8px
+     color:#ffffff;
+     padding-bottom:8px 
 }
  .mymain-section {
-    background-color: #ffffff;
+     background-color: #ffffff;
      padding:10px;
 }
  .my-nav a.active {
@@ -28,25 +31,119 @@
  .my-nav a.link {
      color: #7fc6dd;
 }
- .mymain-section .carousel-control-prev, .mymain-section .carousel-control-next {
-    width: 5%;
+ .mymain-section .carousel-control-prev, 
+ .mymain-section .carousel-control-next {
+     width: 7%;
 }
- .mymain-section .carousel-img, .my-carousel .carousel-img {
-    float:right;
-     width: 320px;
-     padding: 10px 60px 30px 20px;
+ .mymain-section .my-carousel .carousel-img {
+     float:right;
+     width: 150px;
+     padding: 30px 4px 50px 20px;
+     display: block!important;
+     visibility: hidden;
 }
  .my-carousel {
      background: linear-gradient(to top,#668a98,#203239);
 }
  .my-carousel .carousel-caption {
-     right: 10%;
-     bottom: 1.88rem;
-     left: 10%;
-     padding-top: 1.25rem;
-     padding-bottom: 1.25rem;
+     right: 6%;
+     bottom: 0.4rem;
+     left: 6%;
+     padding-top: 0.6rem;
+     padding-bottom: 1rem;
 }
- .my-carousel .carousel-item .carousel-caption {
-     right: 35%;
+ .home-h3 {
+    padding: 10px 4px 0px 0px;
+    margin-bottom:2px; 
+}
+ .home-p {
+    padding: 0px 0px 4px 0px;
+    margin-bottom:6px;
+    font-size: calc(0.75rem + .6vw);
+}
+
+.myintro-section {
+  padding: 4px 12px;
+}
+/* ================================= */
+ @media (min-width: 576px) {
+     .mymain-section .my-carousel .carousel-img {
+         width: 180px;
+         padding: 20px 14px 50px 20px;
+         visibility: visible;
+    }
+     .my-carousel .carousel-caption {
+         right: 35%;
+         bottom: 0.8rem;
+         left: 6%;
+         padding-bottom: 0.8rem;
+    }
+}
+ @media (min-width: 768px) {
+     .mymain-section .my-carousel .carousel-img {
+         width: 240px;
+         padding: 30px 28px 40px 20px;
+         visibility: visible;
+    }
+     .my-carousel .carousel-caption {
+         right: 35%;
+         bottom: 1.4rem;
+         left: 6%;
+        /*padding-bottom: 0.8rem;
+        */
+    }
+     .carousel-caption .h3, .carousel-caption h3 {
+         font-size: calc(1.6rem + .6vw);
+    }
+    .myintro-section {
+      padding: 10px 20px;
+    }
+}
+ @media (min-width: 992px) {
+     .mymain-section .my-carousel .carousel-img {
+         width: 290px;
+         padding: 30px 28px 40px 20px;
+         visibility: visible;
+    }
+     .my-carousel .carousel-caption {
+         right: 32%;
+         bottom: 2.1rem;
+         left: 4%;
+        /*padding-bottom: 0.8rem;
+        */
+    }
+     .carousel-caption .h3, .carousel-caption h3 {
+         font-size: calc(2.0rem + .6vw);
+    }
+     .carousel-caption p {
+         font-size: calc(1.0rem + .6vw);
+    }
+    .myintro-section {
+      padding: 14px 200px 14px 36px;
+    }
+}
+ @media (min-width: 1200px) {
+     .mymain-section .my-carousel .carousel-img {
+         width: 380px;
+         padding: 30px 52px 50px 2px;
+         margin-right: 20px
+    }
+     .my-carousel .carousel-caption {
+         right: 35%;
+         bottom: 2.8rem;
+         left: 10%;
+        /*padding-bottom: 0.8rem;
+        */
+    }
+     .carousel-caption .h3, .carousel-caption h3 {
+         font-size: calc(2.4rem + .6vw);
+
+    }
+     .carousel-caption p {
+         font-size: calc(1.3rem + .6vw);
+    }
+    .myintro-section {
+      padding: 14px 300px 14px 60px;
+    }
 }
  
