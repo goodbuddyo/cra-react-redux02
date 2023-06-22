@@ -77,3 +77,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+### Notes:
+
+React Router 6 no longer uses the Switch component or exact property
+
+#      <Switch>
+#        <Route exact path="/" component={HomePage} />
+#        <Route path="/about" component={AboutPage} />
+#        <Route component={PageNotFound} />
+#      </Switch>

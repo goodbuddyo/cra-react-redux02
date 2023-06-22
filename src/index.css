@@ -1,8 +1,52 @@
 #app {
-  max-width: 850px;
-  margin: 0 auto;
+     max-width: 850px;
+     margin: 0 auto;
 }
-
-nav {
-  padding: 20px 0 20px 0;
+ nav {
+     padding: 10px 0 10px 0;
 }
+ body {
+     background-color: #20323a;
+}
+ .container-fives {
+     background-color: #20323a;
+}
+ .my-head {
+    padding-left:26px;
+}
+ h4.my-subhead {
+    color:#ffffff;
+     padding-bottom:8px
+}
+ .mymain-section {
+    background-color: #ffffff;
+     padding:10px;
+}
+ .my-nav a.active {
+     color: #ffffff;
+}
+ .my-nav a.link {
+     color: #7fc6dd;
+}
+ .mymain-section .carousel-control-prev, .mymain-section .carousel-control-next {
+    width: 5%;
+}
+ .mymain-section .carousel-img, .my-carousel .carousel-img {
+    float:right;
+     width: 320px;
+     padding: 10px 60px 30px 20px;
+}
+ .my-carousel {
+     background: linear-gradient(to top,#668a98,#203239);
+}
+ .my-carousel .carousel-caption {
+     right: 10%;
+     bottom: 1.88rem;
+     left: 10%;
+     padding-top: 1.25rem;
+     padding-bottom: 1.25rem;
+}
+ .my-carousel .carousel-item .carousel-caption {
+     right: 35%;
+}
+ 

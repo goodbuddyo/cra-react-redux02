@@ -3,35 +3,36 @@ import {
   Route,
   Routes, // instead of "Switch"
 } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import HomePage from "./home/HomePage";
 import AboutPage from "./about/AboutPage";
 import Header from "./common/Header";
 import PageNotFound from "./PageNotFound";
-import CoursesPage from "./courses/CoursesPage";
+import TopicsPage from "./topics/TopicsPage";
 
 function App() {
   return (
-    <div className="container-fluid">
-      <Header />
+    <Container className="container-fives">
+      <Row>
+        <Col className="my-head">
+          <Header />
+          <h4 className="my-subhead">5 Steps To 5 Star Websites</h4>
+        </Col>
+      </Row>
+      <div className="mymain-section">
 
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/topics" element={<TopicsPage />} />
+          <Route element={<PageNotFound />} />
+        </Routes>
 
-      <Routes>
-
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/courses" element={<CoursesPage />} />
-
-        <Route element={<PageNotFound />} />
-      </Routes>
-
-
-      {/*<Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/courses" component={CoursesPage} />
-        <Route component={PageNotFound} />
-      </Switch>*/}
-    </div>
+      </div>
+    </Container>
   );
 }
 
