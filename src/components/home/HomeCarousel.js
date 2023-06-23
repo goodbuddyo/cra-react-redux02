@@ -79,7 +79,7 @@ function HomeCarousel() {
         <Carousel.Caption>
           <h3>Step 3: Summarize</h3>
           <p>
-            Outline key research discoveries to help pitch proposals and documentation. &nbsp;
+            Outline key research discoveries to help pitch proposals and for documentation.&nbsp;
             <Link to="/about" className="mycarousel-link" >
               Learn more
             </Link>

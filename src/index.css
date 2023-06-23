@@ -32,7 +32,7 @@
   
   }
 
-.mybodylog-img {width:120px; margin-bottom:4px; vertical-align:bottom; margin-right:6px}
+.mybodylog-img {width:128px; margin-bottom:4px; vertical-align:bottom; margin-right:6px}
 
  .my-head {
      padding-left:26px;
@@ -164,7 +164,7 @@ a.mycarousel-link:hover {
          font-size: calc(1.0rem + .6vw);
     }
     .myintro-section {
-      padding: 14px 200px 14px 36px;
+      padding: 14px 150px 14px 36px;
     }
 }
  @media (min-width: 1200px) {
