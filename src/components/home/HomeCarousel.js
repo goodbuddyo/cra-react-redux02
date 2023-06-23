@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
+import {Link} from "react-router-dom";
 import img0 from '../img/5-5sStar400x246_c.png';
 import img1 from '../img/tapemeasure01.png';
 import img2 from '../img/5-5sIntegrateBiz03.png';
@@ -12,7 +13,7 @@ function HomeCarousel() {
 
   // fade
   return (
-    <Carousel interval="2000000" className="my-carousel">
+    <Carousel interval="11000" fade className="my-carousel">
       <Carousel.Item>
         <img
           className="carousel-img"
@@ -21,7 +22,12 @@ function HomeCarousel() {
         />
         <Carousel.Caption>
           <h3>Welcome to 5-5s.com</h3>
-          <p>An online tool for web developers, designers, project managers and their teams.</p>
+          <p>A 5 step process for web developers, designers, project managers and their teams. &nbsp;
+            <Link to="/about" className="mycarousel-link" >
+              Learn more
+            </Link>
+
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -33,8 +39,12 @@ function HomeCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Step 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing, dolor sit amet,consectetur adipiscing elit amet.</p>
+          <h3>Step 1: Assess</h3>
+          <p>Review user feedback, performance data & business needs. Identify 1 - 3 topics to address. &nbsp;
+            <Link to="/about" className="mycarousel-link" >
+              Learn more
+            </Link>
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -46,9 +56,13 @@ function HomeCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Step 2</h3>
+          <h3>Step 2: Research</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque dolor sit amet, nisl consectetur.
+            Understand industry standards, costs and benefits with each topic to insure adequate ROI. &nbsp;
+
+            <Link to="/about" className="mycarousel-link" >
+              Learn more
+            </Link>
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -63,9 +77,12 @@ function HomeCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Step 3</h3>
+          <h3>Step 3: Summarize</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque dolor sit amet, nisl consectetur.
+            Outline key research discoveries to help pitch proposals and documentation. &nbsp;
+            <Link to="/about" className="mycarousel-link" >
+              Learn more
+            </Link>
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -79,9 +96,12 @@ function HomeCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Step 4</h3>
+          <h3>Step 4: Plan & Execute</h3>
           <p>
-            Sit praesent commodo cursus magna, vel scelerisque dolor sit amet, nisl consectetur.
+            Create a project plan, specify requirements, schedule deadlines, execute the plan. &nbsp;
+            <Link to="/about" className="mycarousel-link" >
+              Learn more
+            </Link>
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -95,9 +115,12 @@ function HomeCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Step 5</h3>
+          <h3>Step 5: Document & Repeat</h3>
           <p>
-            Commodo cursus magna, praesent vel scelerisque dolor sit dolor sit amet, nisl consectetur.
+            Record results, advertise successes, lay the groundwork for the next 5 step process. &nbsp;
+            <Link to="/about" className="mycarousel-link" >
+              Learn more
+            </Link>
           </p>
         </Carousel.Caption>
       </Carousel.Item>
