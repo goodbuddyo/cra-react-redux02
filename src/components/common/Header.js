@@ -1,28 +1,19 @@
-
-
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {Link} from "react-router-dom";
-import homelogo from '../img/5-5sLogo05b.png';
 
-
-const Header=(props) => {
+const Header=() => {
+  const activeStyle={color: "#F15B2A"};
   return (
     <nav className="my-nav">
-
-      <Link to="/" className="myheader-imglink" >
-        <img
-          className="myheader-img"
-          src={homelogo}
-          alt="First slide"
-        />
-      </Link>
+      <NavLink to="/" activeStyle={activeStyle} exact>
+        Home
+      </NavLink>
       {" | "}
-      <NavLink to="/topics" className={(navData) => (navData.isActive? 'active':'link')}>
+      <NavLink to="/topics" activeStyle={activeStyle}>
         Topics
       </NavLink>
       {" | "}
-      <NavLink to="/about" className={(navData) => (navData.isActive? 'active':'link')}>
+      <NavLink to="/about" activeStyle={activeStyle}>
         About
       </NavLink>
     </nav>
