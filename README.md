@@ -2,22 +2,27 @@
 
 ## Get Started
 
-1. **Install [Node 8](https://nodejs.org)** or newer. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)(https://github.com/coryhouse/pluralsight-redux-starter/archive/master.zip)
-2. **Navigate to this project's root directory on the command line.**
-3. **Install Node Packages.** - `npm install`
-4. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome.
-5. Having issues? See below.
+1. **Install [Node 8](https://nodejs.org)** or newer. 
+2. **Navigate (cd) to this project's directory.**
+3. **`npm install`** - 
+4. **`npm start`** - 
 
-## Having Issues? Try these things first:
+### Json-Server mock api
+This project uses the npm-run-all package, which allows both the React app and the json-server to start in parallel by running a single "npm start" command in the terminal. The "run-p" in the start script stands for "run-parallel" 
+    "start": "run-p start:dev start:api"
+This means only one repo is required for both react app and json-server api
+The .env file and package.json file direct the react app to run on port 3003
+The webpack.config and tools/apiServer.js files direct json-server to run on port 3005
+On a mac, Ctrl + C does seem not stop either the react app or the json-server app
+What seems to work is 
+  lsof -i tcp:3003
+This will return the [PID] number which can then be used to kill the instance
+Copy the [PID] and then run
+  kill -9 [PID]
+Repeat this process for port 3005
 
-1. Run `npm install` - If you forget to do this, you'll get an error when you try to start the app later.
-2. Don't run the project from a symbolic link. It will cause issues with file watches.
-3. Delete any .eslintrc in your user directory and disable any ESLint plugin / custom rules within your editor since these will conflict with the ESLint rules defined in the course.
-4. On Windows? Open your console as an administrator. This will assure the console has the necessary rights to perform installs.
-5. Ensure you do not have NODE_ENV=production in your env variables as it will not install the devDependencies. To check run this on the command line: `set NODE_ENV`. If it comes back as production, you need to clear this env variable.
-6. Nothing above work? Delete your node_modules folder and re-run npm install.
 
-### Production Dependencies
+###  Dependencies of interest
 
 | **Dependency**   | **Use**                                              |
 | ---------------- | ---------------------------------------------------- |
@@ -33,19 +38,16 @@
 | redux-thunk      | Async redux library                                  |
 | reselect         | Memoize selectors for performance                    |
 
-### Development Dependencies
+### Dev Dependencies of interest
 
 | **Dependency**                     | **Use**                                                          |
 | ---------------------------------- | ---------------------------------------------------------------- |
 | @babel/core                        | Transpiles modern JavaScript so it runs cross-browser            |
-| @testing-library/react             | Test React components                                            |
-| @wojtekmaj/enzyme-adapter-react-17 | Configure Enzyme to work with React 17                           |
 | babel-eslint                       | Lint modern JavaScript via ESLint                                |
 | babel-loader                       | Add Babel support to Webpack                                     |
 | babel-preset-react-app             | Babel preset for working in React. Used by create-react-app too. |
 | css-loader                         | Read CSS files via Webpack                                       |
 | cssnano                            | Minify CSS                                                       |
-| enzyme                             | Simplified JavaScript Testing utilities for React                |
 | eslint                             | Lints JavaScript                                                 |
 | eslint-loader                      | Run ESLint via Webpack                                           |
 | eslint-plugin-import               | Advanced linting of ES6 imports                                  |
@@ -53,19 +55,14 @@
 | fetch-mock                         | Mock fetch calls                                                 |
 | html-webpack-plugin                | Generate HTML file via webpack                                   |
 | http-server                        | Lightweight HTTP server to serve the production build locally    |
-| jest                               | Automated testing framework                                      |
 | json-server                        | Create mock API that simulates create, update, delete            |
 | mini-css-extract-plugin            | Extract imported CSS to a separate file via Webpack              |
 | node-fetch                         | Make HTTP calls via fetch using Node - Used by fetch-mock        |
 | npm-run-all                        | Display results of multiple commands on single command line      |
 | postcss                            | Post-process CSS                                                 |
 | postcss-loader                     | Post-process CSS via Webpack                                     |
-| react-test-renderer                | Render React components for testing                              |
 | redux-immutable-state-invariant    | Warn when Redux state is mutated                                 |
 | redux-mock-store                   | Mock Redux store for testing                                     |
 | rimraf                             | Delete files and folders                                         |
 | style-loader                       | Insert imported CSS into app via Webpack                         |
-| webpack                            | Bundler with plugin ecosystem and integrated dev server          |
-| webpack-bundle-analyzer            | Generate report of what's in the app's production bundle         |
-| webpack-cli                        | Run Webpack via the command line                                 |
 | webpack-dev-server                 | Serve app via Webpack                                            |
