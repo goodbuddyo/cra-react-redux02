@@ -10,7 +10,7 @@ const topics=[
     id: 2,
     title: "WCAG Checklist",
     slug: "wcag-checklist",
-    authorId: 1,
+    authorId: 2,
     category: "Web Accessibility"
   },
   {
@@ -52,7 +52,7 @@ const topics=[
     id: 8,
     title: "Cybersecurity Tools",
     slug: "cybersecurity-tools",
-    authorId: 1,
+    authorId: 3,
     category: "Cyber Security"
   },
   {
@@ -66,8 +66,16 @@ const topics=[
     id: 10,
     title: "7 best website performance test tools in 2023",
     slug: "7-best-website-performance-test-tools-in-2023",
-    authorId: 1,
+    authorId: 2,
     category: "Performance"
+  },
+  {
+    "id": 11,
+    "title": "Free CDN Performance Tool",
+    "authorId": 3,
+    "category": "CDN/Edge",
+    "createdAt": 1688102741485,
+    "slug": "free-cdn-performance-tool"
   }
 ];
 

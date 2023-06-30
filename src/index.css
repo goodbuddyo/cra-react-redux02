@@ -3,7 +3,7 @@
      margin: 0 auto;
 }
  nav {
-     padding: 10px 0 10px 0;
+     padding: 10px 6px;
 }
  body {
      background-color: #20323a;
@@ -11,10 +11,21 @@
  .container-fives {
      background-color: #20323a;
      min-width: 400px;
+     padding: 8px;
 }
 .myheader-img {width:100px; }
 
-.btn-myhome {
+.myintro-section 
+a.btn-myhome:hover {
+  color:#c3ecf6;
+  background-color: #0a6485;
+}
+  
+
+  a.btn-myhome {
+  color:#ffffff;
+  background-color: #668a98;
+  
     --bs-btn-color: #fff;
     --bs-btn-bg: #668a98;
     --bs-btn-border-color: #668a98;
@@ -39,11 +50,14 @@
 }
  h4.my-subhead {
      color:#ffffff;
-     padding-bottom:8px 
+     padding:0px 4px 2px 6px; 
 }
  .mymain-section {
      background-color: #ffffff;
      padding:10px;
+}
+ .my-nav a {
+     color: #ffffff;
 }
  .my-nav a.active {
      color: #ffffff;

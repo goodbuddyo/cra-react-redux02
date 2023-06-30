@@ -1,4 +1,5 @@
 export default {
   topics: [],
-  authors: []
+  authors: [],
+  apiCallsInProgress: 0
 };

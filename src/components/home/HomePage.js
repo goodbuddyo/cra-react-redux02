@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 //import homelogo from '../img/5-5sLogo05b.png';
 
 const HomePage=() => (
-
   <section className="myintro-section">
 
     {/*<h3 className="home-h3" >Great websites don't just happen,...</h3>

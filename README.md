@@ -1,5 +1,7 @@
 # Starter Kit for [Building Applications in React and Redux](http://www.pluralsight.com/author/cory-house) on Pluralsight
 
+This app is based on a very thorough, line by line, 6.5 hour video tutorial demonstrating how to implement Redux in a React 17 app using an Express/json-server mock api. Cory House is the man.
+
 ## Get Started
 
 1. **Install [Node 8](https://nodejs.org)** or newer. 
@@ -7,12 +9,17 @@
 3. **`npm install`** - 
 4. **`npm start`** - 
 
+
 ### Json-Server mock api
-This project uses the npm-run-all package, which allows both the React app and the json-server to start in parallel by running a single "npm start" command in the terminal. The "run-p" in the start script stands for "run-parallel" 
+This project uses the package npm-run-all which enables both the web server (React app) and the json-server to start in parallel with one "npm start" command. 
     "start": "run-p start:dev start:api"
-This means only one repo is required for both react app and json-server api
-The .env file and package.json file direct the react app to run on port 3003
+The "run-p" in the start script stands for "run-parallel". This means only one repo is required for both web server and json-server files. The api scripts are located in the src/api folder
+
+### Port designations
+The .env file and package.json file direct the React app to run on port 3003
 The webpack.config and tools/apiServer.js files direct json-server to run on port 3005
+
+### Stopping a local server on a Mac
 On a mac, Ctrl + C does seem not stop either the react app or the json-server app
 What seems to work is 
   lsof -i tcp:3003
@@ -21,6 +28,10 @@ Copy the [PID] and then run
   kill -9 [PID]
 Repeat this process for port 3005
 
+
+
+### Initial attempt at CRA
+The first few commits for this repo start with a blank create-react-app instance followed by a basic React page layout and navigation. Things were looing good. But then, while building the Redux structure and setting up the api calls, the webpack config used by CRA was not happy with the methods used in the Redux tutorial I was following.  Stack overflow said you can revise the webpack config in CRA with the react-app-rewired package, but I had no success with that.  I lost several days trying to fix this.  In the end, I had to escape out of CRA and use the older custom webpack config used in this React 17 Redux topic. I also made the mistake of experimenting with the React-Bootstrap Carousel on the homepage early on. It looked pretty awesome, until it stopped working with the older config. The React-Bootstrap Carousel brought me into React Router 6 which also conflicted with the older React 17 config and had to be reverted to v 5. Can you say: F-R-U-S-T-R-A-T-I-N-G?
 
 ###  Dependencies of interest
 

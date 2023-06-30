@@ -5,6 +5,9 @@ import AboutPage from "./about/AboutPage";
 import Header from "./common/Header";
 import PageNotFound from "./PageNotFound";
 import TopicsPage from "./topics/TopicsPage";
+import ManageTopicPage from "./topics/ManageTopicPage";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -16,8 +19,11 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/topics" component={TopicsPage} />
+          <Route path="/topic/:slug" component={ManageTopicPage} />
+          <Route path="/topic" component={ManageTopicPage} />
           <Route component={PageNotFound} />
         </Switch>
+        <ToastContainer autoClose={3000} hideProgressBar />
       </div>
     </div>
   );
