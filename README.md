@@ -1,37 +1,44 @@
-# Starter Kit for [Building Applications in React and Redux](http://www.pluralsight.com/author/cory-house) on Pluralsight
+## CRA-React-Redux02
 
 This app is based on a very thorough, line by line, 6.5 hour video tutorial demonstrating how to implement Redux in a React 17 app using an Express/json-server mock api. Cory House is the man.
 
-## Get Started
+[Building Applications in React and Redux](http://www.pluralsight.com/priority/cory-house) 
+
+### Get Started
 
 1. **Install [Node 8](https://nodejs.org)** or newer. 
-2. **Navigate (cd) to this project's directory.**
-3. **`npm install`** - 
-4. **`npm start`** - 
-
+2. **Download or clone the repo**
+3. **Navigate (cd) to the project folder.**
+4. **`npm install`** - 
+5. **`npm start`** - 
 
 ### Json-Server mock api
-This project uses the package npm-run-all which enables both the web server (React app) and the json-server to start in parallel with one "npm start" command. 
+This project uses the npm-run-all package which enables both the web server (React app) and the json-server to start in parallel with a single "npm start" command. 
     "start": "run-p start:dev start:api"
-The "run-p" in the start script stands for "run-parallel". This means only one repo is required for both web server and json-server files. The api scripts are located in the src/api folder
+The "p" in "run-p" stands for "run-parallel". This means only one repo is required for both web server and json-server files. The api scripts are located in the src/api folder
+
+### Initial attempt at CRA
+This repo started with a blank create-react-app instance (React v 18.2.0) and react-router-dom (v6.13.0). I decided to explore using Redux with this project. Unfortunately, the webpack config used by CRA conflicted with several packages in the Redux tutorial I was following.  I attempted several fixes including the react-app-rewired package, but was unsuccessful.  I losing a day or so trying to find a fix I eventually opted out of the CRA config and used an older custom webpack config that worked with React 17 and react-redux v7.2.4. 
+Some of the other packages reverted due to conflicts included React-Bootstrap v1 and React Router v5.
 
 ### Port designations
-The .env file and package.json file direct the React app to run on port 3003
-The webpack.config and tools/apiServer.js files direct json-server to run on port 3005
+The .env file and package.json file direct this React app to run on 
+  port 3003  
+The webpack.config and tools/apiServer.js files direct json-server to run on 
+  port 3005  
 
 ### Stopping a local server on a Mac
-On a mac, Ctrl + C does seem not stop either the react app or the json-server app
-What seems to work is 
-  lsof -i tcp:3003
+On a mac, Ctrl + C does seem not stop either the web app or the json-server app
+What does seem to work is 
+  lsof -i tcp:3003 
 This will return the [PID] number which can then be used to kill the instance
 Copy the [PID] and then run
   kill -9 [PID]
 Repeat this process for port 3005
 
-
-
-### Initial attempt at CRA
-The first few commits for this repo start with a blank create-react-app instance followed by a basic React page layout and navigation. Things were looing good. But then, while building the Redux structure and setting up the api calls, the webpack config used by CRA was not happy with the methods used in the Redux tutorial I was following.  Stack overflow said you can revise the webpack config in CRA with the react-app-rewired package, but I had no success with that.  I lost several days trying to fix this.  In the end, I had to escape out of CRA and use the older custom webpack config used in this React 17 Redux topic. I also made the mistake of experimenting with the React-Bootstrap Carousel on the homepage early on. It looked pretty awesome, until it stopped working with the older config. The React-Bootstrap Carousel brought me into React Router 6 which also conflicted with the older React 17 config and had to be reverted to v 5. Can you say: F-R-U-S-T-R-A-T-I-N-G?
+### Initial stage of 5-5s.com app
+The purpose of this repo is to satify the requirements of the Flatiron phase 2 project. 
+The goal is to continue this project to complete a working live beta of the 5-5s.com app 
 
 ###  Dependencies of interest
 

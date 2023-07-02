@@ -7,7 +7,7 @@ const TopicList=({topics,onDeleteClick}) => (
     <thead>
       <tr>
         <th>Title</th>
-        <th>Author</th>
+        <th>Priority</th>
         <th>Category</th>
         <th />
       </tr>
@@ -20,11 +20,11 @@ const TopicList=({topics,onDeleteClick}) => (
             <td>
               <Link to={"/topic/"+topic.slug}>{topic.title}</Link>
             </td>
-            <td>{topic.authorName}</td>
+            <td>{topic.priorityName}</td>
             <td>{topic.category}</td>
             <td>
               <button
-                className="btn btn-outline-danger"
+                className="btn btn-outline-danger "
                 onClick={() => onDeleteClick(topic)}
               >
                 Delete

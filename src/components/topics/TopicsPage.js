@@ -1,10 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 import * as topicActions from "../../redux/actions/topicActions";
-import * as authorActions from "../../redux/actions/authorActions";
+import * as priorityActions from "../../redux/actions/priorityActions";
 import PropTypes from "prop-types";
 import {bindActionCreators} from "redux";
 import TopicList from "./TopicList";
+import TopicsTopPar from "./TopicsTopPar";
 import {Redirect} from "react-router-dom";
 import Spinner from "../common/Spinner";
 import {toast} from "react-toastify";
@@ -15,7 +16,7 @@ class TopicsPage extends React.Component {
   };
 
   componentDidMount() {
-    const {topics,authors,actions}=this.props;
+    const {topics,priorities,actions}=this.props;
 
     if(topics.length===0) {
       actions.loadTopics().catch(error => {
@@ -23,9 +24,9 @@ class TopicsPage extends React.Component {
       });
     }
 
-    if(authors.length===0) {
-      actions.loadAuthors().catch(error => {
-        alert("Loading authors failed"+error);
+    if(priorities.length===0) {
+      actions.loadPriorities().catch(error => {
+        alert("Loading priorities failed"+error);
       });
     }
   }
@@ -41,16 +42,22 @@ class TopicsPage extends React.Component {
 
   render() {
     return (
-      <>
+      <section className="mybody-section topics-body">
         {this.state.redirectToAddTopicPage&&<Redirect to="/topic" />}
-        <h2>Topics</h2>
+
+        <h2>Step 1: Assess Site Data - Select a Topic & Priority</h2>
+
+        <TopicsTopPar />
+
+
+
         {this.props.loading? (
           <Spinner />
         ):(
           <>
             <button
-              style={{marginBottom: 20}}
-              className="btn btn-primary add-topic"
+              style={{marginBottom: 0,marginRight: 10,marginTop: 10}}
+              className="btn add-topic btn-mybutton"
               onClick={() => this.setState({redirectToAddTopicPage: true})}
             >
               Add Topic
@@ -62,13 +69,13 @@ class TopicsPage extends React.Component {
             />
           </>
         )}
-      </>
+      </section>
     );
   }
 }
 
 TopicsPage.propTypes={
-  authors: PropTypes.array.isRequired,
+  priorities: PropTypes.array.isRequired,
   topics: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired
@@ -77,15 +84,15 @@ TopicsPage.propTypes={
 function mapStateToProps(state) {
   return {
     topics:
-      state.authors.length===0
+      state.priorities.length===0
         ? []
         :state.topics.map(topic => {
           return {
             ...topic,
-            authorName: state.authors.find(a => a.id===topic.authorId).name
+            priorityName: state.priorities.find(a => a.id===topic.priorityLevel).name
           };
         }),
-    authors: state.authors,
+    priorities: state.priorities,
     loading: state.apiCallsInProgress>0
   };
 }
@@ -94,7 +101,7 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: {
       loadTopics: bindActionCreators(topicActions.loadTopics,dispatch),
-      loadAuthors: bindActionCreators(authorActions.loadAuthors,dispatch),
+      loadPriorities: bindActionCreators(priorityActions.loadPriorities,dispatch),
       deleteTopic: bindActionCreators(topicActions.deleteTopic,dispatch)
     }
   };

@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import {connect} from "react-redux";
 import {loadTopics,saveTopic} from "../../redux/actions/topicActions";
-import {loadAuthors} from "../../redux/actions/authorActions";
+import {loadPriorities} from "../../redux/actions/priorityActions";
 import PropTypes from "prop-types";
 import TopicForm from "./TopicForm";
 import {newTopic} from "../../../tools/mockData";
@@ -10,8 +10,8 @@ import {toast} from "react-toastify";
 
 function ManageTopicPage({
   topics,
-  authors,
-  loadAuthors,
+  priorities,
+  loadPriorities,
   loadTopics,
   saveTopic,
   history,
@@ -30,9 +30,9 @@ function ManageTopicPage({
       setTopic({...props.topic});
     }
 
-    if(authors.length===0) {
-      loadAuthors().catch(error => {
-        alert("Loading authors failed"+error);
+    if(priorities.length===0) {
+      loadPriorities().catch(error => {
+        alert("Loading priorities failed"+error);
       });
     }
   },[props.topic]);
@@ -41,16 +41,16 @@ function ManageTopicPage({
     const {name,value}=event.target;
     setTopic(prevTopic => ({
       ...prevTopic,
-      [name]: name==="authorId"? parseInt(value,10):value
+      [name]: name==="priorityLevel"? parseInt(value,10):value
     }));
   }
 
   function formIsValid() {
-    const {title,authorId,category}=topic;
+    const {title,priorityLevel,category}=topic;
     const errors={};
 
     if(!title) errors.title="Title is required.";
-    if(!authorId) errors.author="Author is required";
+    if(!priorityLevel) errors.priority="Priority is required";
     if(!category) errors.category="Category is required";
 
     setErrors(errors);
@@ -73,13 +73,13 @@ function ManageTopicPage({
       });
   }
 
-  return authors.length===0||topics.length===0? (
+  return priorities.length===0||topics.length===0? (
     <Spinner />
   ):(
     <TopicForm
       topic={topic}
       errors={errors}
-      authors={authors}
+      priorities={priorities}
       onChange={handleChange}
       onSave={handleSave}
       saving={saving}
@@ -89,10 +89,10 @@ function ManageTopicPage({
 
 ManageTopicPage.propTypes={
   topic: PropTypes.object.isRequired,
-  authors: PropTypes.array.isRequired,
+  priorities: PropTypes.array.isRequired,
   topics: PropTypes.array.isRequired,
   loadTopics: PropTypes.func.isRequired,
-  loadAuthors: PropTypes.func.isRequired,
+  loadPriorities: PropTypes.func.isRequired,
   saveTopic: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 };
@@ -110,13 +110,13 @@ function mapStateToProps(state,ownProps) {
   return {
     topic,
     topics: state.topics,
-    authors: state.authors
+    priorities: state.priorities
   };
 }
 
 const mapDispatchToProps={
   loadTopics,
-  loadAuthors,
+  loadPriorities,
   saveTopic
 };
 

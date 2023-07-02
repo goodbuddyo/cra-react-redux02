@@ -1,11 +1,11 @@
 import {combineReducers} from "redux";
 import topics from "./topicReducer";
-import authors from "./authorReducer";
+import priorities from "./priorityReducer";
 import apiCallsInProgress from "./apiStatusReducer";
 
 const rootReducer=combineReducers({
   topics,
-  authors,
+  priorities,
   apiCallsInProgress
 });
 

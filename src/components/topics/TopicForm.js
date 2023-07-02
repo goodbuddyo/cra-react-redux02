@@ -5,58 +5,60 @@ import SelectInput from "../common/SelectInput";
 
 const TopicForm=({
   topic,
-  authors,
+  priorities,
   onSave,
   onChange,
   saving=false,
   errors={}
 }) => {
   return (
-    <form onSubmit={onSave}>
-      <h2>{topic.id? "Edit":"Add"} Topic</h2>
-      {errors.onSave&&(
-        <div className="alert alert-danger" role="alert">
-          {errors.onSave}
-        </div>
-      )}
-      <TextInput
-        name="title"
-        label="Title"
-        value={topic.title}
-        onChange={onChange}
-        error={errors.title}
-      />
+    <section className="mybody-section topics-body">
+      <form onSubmit={onSave}>
+        <h2>{topic.id? "Edit":"Add"} Topic</h2>
+        {errors.onSave&&(
+          <div className="alert alert-danger" role="alert">
+            {errors.onSave}
+          </div>
+        )}
+        <TextInput
+          name="title"
+          label="Title"
+          value={topic.title}
+          onChange={onChange}
+          error={errors.title}
+        />
 
-      <SelectInput
-        name="authorId"
-        label="Author"
-        value={topic.authorId||""}
-        defaultOption="Select Author"
-        options={authors.map(author => ({
-          value: author.id,
-          text: author.name
-        }))}
-        onChange={onChange}
-        error={errors.author}
-      />
+        <SelectInput
+          name="priorityLevel"
+          label="Priority"
+          value={topic.priorityLevel||""}
+          defaultOption="Select Priority"
+          options={priorities.map(priority => ({
+            value: priority.id,
+            text: priority.name
+          }))}
+          onChange={onChange}
+          error={errors.priority}
+        />
 
-      <TextInput
-        name="category"
-        label="Category"
-        value={topic.category}
-        onChange={onChange}
-        error={errors.category}
-      />
+        <TextInput
+          name="category"
+          label="Category"
+          value={topic.category}
+          onChange={onChange}
+          error={errors.category}
+        />
 
-      <button type="submit" disabled={saving} className="btn btn-primary">
-        {saving? "Saving...":"Save"}
-      </button>
-    </form>
+        <button type="submit" disabled={saving} className="btn  btn-mybutton">
+          {saving? "Saving...":"Save"}
+        </button>
+      </form>
+    </section>
   );
 };
 
 TopicForm.propTypes={
-  authors: PropTypes.array.isRequired,
+  priorities: PropTypes.array.isRequired,
   topic: PropTypes.object.isRequired,
   errors: PropTypes.object,
   onSave: PropTypes.func.isRequired,
