@@ -28,7 +28,7 @@ The webpack.config and tools/apiServer.js files direct json-server to run on
   port 3005  
 
 ### Stopping a local server on a Mac
-On a mac, Ctrl + C does seem not stop either the web app or the json-server app
+On a mac, Ctrl + C does not seem to stop either the web app or the json-server app
 What does seem to work is 
   lsof -i tcp:3003 
 This will return the [PID] number which can then be used to kill the instance
