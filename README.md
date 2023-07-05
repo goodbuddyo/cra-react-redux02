@@ -18,7 +18,7 @@ This project uses the npm-run-all package which enables both the web server (Rea
 The "p" in "run-p" stands for "run-parallel". This means only one repo is required for both web server and json-server files. The api scripts are located in the src/api folder
 
 ### Initial attempt at CRA
-This repo started with a blank create-react-app instance (React v 18.2.0) and react-router-dom (v6.13.0). I decided to explore using Redux with this project. Unfortunately, the webpack config used by CRA conflicted with several packages in the Redux tutorial I was following.  I attempted several fixes including the react-app-rewired package, but was unsuccessful.  I losing a day or so trying to find a fix I eventually opted out of the CRA config and used an older custom webpack config that worked with React 17 and react-redux v7.2.4. 
+This repo started with a blank create-react-app instance (React v 18.2.0) and react-router-dom (v6.13.0). I decided to explore using Redux with this project. Unfortunately, the webpack config used by CRA conflicted with several packages in the Redux tutorial I was following.  I attempted several fixes including the react-app-rewired package, but was unsuccessful.  I lost a day or so trying to find a fix I eventually opted out of the CRA config and used an older custom webpack config that worked with React 17 and react-redux v7.2.4. 
 Some of the other packages reverted due to conflicts included React-Bootstrap v1 and React Router v5.
 
 ### Port designations
